@@ -1,0 +1,7 @@
+sudo install ffmpeg
+pip install flask
+pip install pytube
+
+pip install ffmpeg-python
+pip install schedule 
+pip install sched #For Window

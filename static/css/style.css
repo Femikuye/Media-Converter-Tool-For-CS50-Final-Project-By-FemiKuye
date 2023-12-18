@@ -1,0 +1,57 @@
+body{
+    font-family: 'montserrat', sans-serif;
+}
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+.form-container{
+    max-width: 600px;
+    margin: auto;
+    color: #333;
+}
+.file-selection-space{
+    min-height: 250px;
+    width: 100%;
+    background: #eee;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 10px;
+    position: relative;
+}
+.file-selection-space .upload-items .upload-item{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    width: 100%;
+}
+.upload-item ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 5px;
+}
+.upload-item ul li:hover{
+    opacity: .6;
+}
+.upload-item ul li:nth-child(1) , .upload-item ul li:nth-child(3){
+    cursor: pointer;
+}
+.upload-item ul li:nth-child(2) , .upload-item ul li:nth-child(3), .conversion-success-responce{
+    display: none;
+}
+.file-uploader-space{ 
+    position: absolute;
+    bottom: 0;
+}
+.file-uploader-space input[type=file]{
+    display: none;
+}
+.file-uploader-space label{
+    cursor: pointer;
+    color: #9b9b9b;
+}
+.fa-check{
+    color: green;
+}
+.fa-download{
+    color: #333;
+}

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %} Download YouTube Videos {% endblock %}
+
+
+{% block body %}
+
+    <div class="container">
+        <div class="form-container">
+            <h1>Request YouTube Videos</h1>
+            <form method="post" id="sendYoutubeVideoLink">
+                <div class="form-group mb-3">
+                    <label for="videoLink">Input Video Url</label>
+                    <input type="text" id="videoLink" name="youtube-video-link" class="form-control">
+                </div>
+                <button class="btn btn-primary">Request Video</button>
+                <div class="response"></div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

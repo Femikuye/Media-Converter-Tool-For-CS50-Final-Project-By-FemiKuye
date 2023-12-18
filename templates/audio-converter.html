@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %} Convert Audio Files {% endblock %}
+
+
+{% block body %}
+
+    <div class="container">
+        <div class="form-container">
+            <h1>Convert Audio Files</h1>
+            <p>Convert your audio files to any format easily.</p>
+            <div class="file-selection-space">
+                <div class="upload-items">
+                </div>
+                <div class="file-uploader-space">
+                    <div class="form-group mb-3 col-md-12">
+                        <p>Select Audio Files</p>
+                        <label for="audioFile">
+                            <spa><i class="fa-solid fa-upload fa fa-3x"></i></spa>
+                        </label>
+                        <input multiple type="file" id="audioFile" name="audio-file" class="form-control" accept="audio/*">
+                    </div>
+                </div>
+            </div>
+                <div class="response"></div>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <input type="hidden" value="audio-converter" id="converter"> 
+                        <select aria-label="Recipient's username" aria-describedby="convertButton" id="convertTo" class="form-control">
+                            <option value=""> Select Conversion Format </option>
+                            {% for format in audioFormats %}
+                            <option value="{{format}}"> {{format}} </option>
+                            {% endfor %}
+                        </select>
+                        <button class="btn btn-outline-secondary" type="button" id="convertButton">Start Conversion</button>
+                    </div>
+                    <div class="conversion-success-responce">
+                        <p>Convertion Completed</p>
+                        <button type="button" id="downloadConvertedFiles" class="btn btn-info">
+                            Downlaod
+                        </button>
+                    </div>
+                </div>  
+        </div>
+    </div>
+<script>
+    const FORMATS = {{audioFormats|d([])|tojson}}
+    console.log("Formats: ", FORMATS)
+</script>
+{% endblock %}
