@@ -72,3 +72,7 @@ The second function inside of the **Converter** class is the **convert_audio** f
 5. **TaskScheduler.py**: This module is called by the task scheduler to delete files
 
 6. **FilesCompressor**: In case users convert multiple files and wanting to download them at once, we need a way to compress all the files into one zip file for the users to download. This is where this file is usefull.
+
+#### App.py
+
+The app.py file is the entry point of this application, it contains all the routes and functions of the web application.
