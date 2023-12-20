@@ -5,13 +5,18 @@ body{
     vertical-align: -.125em;
     fill: currentColor;
 }
-.form-container{
+.converter-container{
     max-width: 600px;
     margin: auto;
     color: #333;
+    position: relative;
+}
+.converter-container .response{
+    position: absolute;
+    width: 100%;
+    z-index: 99;
 }
 .file-selection-space{
-    min-height: 250px;
     width: 100%;
     background: #eee;
     font-size: 14px;
@@ -23,6 +28,13 @@ body{
     display: grid;
     grid-template-columns: 4fr 1fr;
     width: 100%;
+}
+.upload-item .upload-item-detail{
+    position: relative;
+    word-wrap: anywhere;
+}
+.upload-item .upload-item-detail p{
+    display: none;
 }
 .upload-item ul li{
     list-style: none;
@@ -39,13 +51,19 @@ body{
     display: none;
 }
 .file-uploader-space{ 
-    position: absolute;
+    position: relative;
     bottom: 0;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    width: 100%;
+    min-height: 70px;
+    text-align: center;
 }
 .file-uploader-space input[type=file]{
     display: none;
 }
-.file-uploader-space label{
+.file-uploader-space label, .multiple-download-option button i{
     cursor: pointer;
     color: #9b9b9b;
 }
@@ -55,3 +73,45 @@ body{
 .fa-download{
     color: #333;
 }
+
+.loading-effect {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .bar {
+    background-color: rgb(164, 164, 252);
+    min-width: 100%;
+    min-height: 5px;
+    position: relative;
+    overflow: hidden;
+  }
+  .bar::after {
+    content: "";
+    min-height: 5px;
+    position: absolute;
+    background: #fff;
+    transform: translateX(-100%);
+    animation: animate 4s infinite;
+  }
+  .bar::before {
+    content: "";
+    min-height: 5px;
+    position: absolute;
+    background: #fff;
+    transform: translateX(-100%);
+    animation: animate 4s infinite;
+    animation-delay: 1s;
+  }
+  @keyframes animate {
+    0% {
+      transform: translateX(-150%);
+      min-width: 100px;
+    }
+    100% {
+      transform: translateX(300%);
+      min-width: 400px;
+    }
+  }
+  

@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %} Convert Video Files {% endblock %}
+
+
+{% block body %}
+
+    <div class="container">
+        <div class="converter-container">
+            <h1>Convert Video Files</h1>
+            <p>Convert your video files to any of the available video format.</p>
+            <div class="response"></div>
+            <div class="file-selection-space">
+                <div class="upload-items">
+                </div>
+                <div class="file-uploader-space">
+                    <div class="mb-3">
+                        <label title="Upload Files" for="mediaFile">
+                            <spa><i class="fa-solid fa-upload fa fa-3x"></i></spa>
+                            <p>Select Video Files</p>
+                        </label>
+                        <input multiple type="file" id="mediaFile" name="video-file" class="form-control" accept="video/*">
+                    </div>
+                    <div class="multiple-download-option conversion-success-responce">
+                        <p class="text-success">Convertion Completed</p>
+                        <button title="Download All Files" type="button" id="downloadConvertedFiles" class="btn btn-default">
+                            <i class="fa fa-solid fa-download fa-3x"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+                <div class="row">
+                    <div class="input-group mb-3">
+                        <input type="hidden" value="video-converter" id="converter"> 
+                        <select aria-label="Recipient's username" aria-describedby="convertButton" id="convertTo" class="form-control">
+                            <option value=""> Select Conversion Format </option>
+                            {% for format in videoFormats %}
+                            <option value="{{format}}"> {{format}} </option>
+                            {% endfor %}
+                        </select>
+                        <button class="btn btn-secondary" type="button" id="convertButton">
+                            Start Conversion
+                        </button>
+                    </div>
+                </div>  
+        </div>
+    </div>
+<script>
+    const FORMATS = {{videoFormats|d([])|tojson}}
+    console.log("FORMATS:", FORMATS)
+</script>
+{% endblock %}

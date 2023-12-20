@@ -1,7 +1,6 @@
-sudo install ffmpeg
-pip install flask
-pip install pytube
+# sudo install ffmpeg
+# pip install flask
 
-pip install ffmpeg-python
-pip install schedule 
-pip install sched #For Window
+# pip install ffmpeg-python
+# pip install apscheduler
+# pip install Pillow
